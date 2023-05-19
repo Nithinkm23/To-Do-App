@@ -10,7 +10,7 @@ var error3 = document.getElementById("err3");
 
     if (eml.value == "admin" && passw.value == "12345") {
 
-    window.location.href = "http://127.0.0.1:5500/mainPage.html";
+    window.location.href = "http://127.0.0.1:5500/To-Do-App/mainPage.html";
     alert("Logging in");
   }
   else{
