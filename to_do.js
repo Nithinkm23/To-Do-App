@@ -11,7 +11,7 @@ fetch("https://jsonplaceholder.typicode.com/todos")
       <td>${values.title}</td>
       <td>
       
-      <input class=" checkbox" type="checkbox" value="values.title" id="flexCheckDefault">
+      <input class=" checkbox" type="checkbox" onclick=checkboxcount() id="check">
       <label class="form-check-label" for="flexCheckDefault">  </label>
     </td>
     
@@ -25,30 +25,30 @@ fetch("https://jsonplaceholder.typicode.com/todos")
     console.log(error);
   });
 
-  let checkedCount=0;
+  function checkboxcount(){
+    let checked= document.querySelectorAll('input[id="check"]:checked').length;
+    count(checked);
+}
 
-  const alertPromise= ()=>{
-       return new Promise((resolve,reject)=>{
-  
-           
-          if(checkedCount===5){
-              resolve(checkedCount)
-          }
-          else{
-              reject('count not equal to 5');
-          }
-      });
-  }
-  
-  const promiseCall=()=>{
-      alertPromise().then((data)=>{
-          alert(`Congrats. 5 Tasks have been Successfully Completed`);
-      })
-      .catch((err)=>{
-          console.log('promise rejected');
-      })
-  }
-  
+function count(val){
+    let nwprom = new Promise(function(resolve,reject){
+        if (val==5){
+            resolve(val);
+        }
+        else{
+            reject(val);
+        }
+    });
+    nwprom.then(
+        function(value){
+            alert("Congrats.. 5 Tasks have been Successfully Completed");
+
+        },
+        function(error){
+            console.log(error+"Tasks not completed");
+        }
+    );
+}
 
 
 
