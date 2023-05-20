@@ -12,14 +12,6 @@ document.getElementById("login").onclick = function redirect() {
     alert("OOPS!! Try again");
   }
 };
-// function redirect() {
-//   if (eml.value == "admin" && passw.value == "12345") {
-
-//     btn.addEventListener("click", () => {
-//       window.location= "http://127.0.0.1:5500/To-Do-App/mainPage.html";
-//     });
-//   }
-// }
 
 function validateemail() {
   if (eml.value == "admin") {

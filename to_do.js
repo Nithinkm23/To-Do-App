@@ -10,10 +10,10 @@ fetch("https://jsonplaceholder.typicode.com/todos")
       <td>${values.id}</td>  
       <td>${values.title}</td>
       <td>
-      <div class="form-check">
-      <input class="form-check-input checkbox" type="checkbox" value="values.title" id="flexCheckDefault">
+      
+      <input class=" checkbox" type="checkbox" value="values.title" id="flexCheckDefault">
       <label class="form-check-label" for="flexCheckDefault">  </label>
-    </div></td>
+    </td>
     
     </tr>`;
     });
@@ -25,52 +25,33 @@ fetch("https://jsonplaceholder.typicode.com/todos")
     console.log(error);
   });
 
-var checkboxes=document.querySelectorAll(".checkbox");
-var count=0;
-for(var i=0;i<checkboxes.length;i++)
-{
-    checkboxes[i].addEventListener('click',function(){
-        if (this.checked==true){
-count++;
-        }
-        else{
-            count--;
-        }
-        document.getElementById
-    })
+  let checkedCount=0;
 
-}
+  const alertPromise= ()=>{
+       return new Promise((resolve,reject)=>{
+  
+           
+          if(checkedCount===5){
+              resolve(checkedCount)
+          }
+          else{
+              reject('count not equal to 5');
+          }
+      });
+  }
+  
+  const promiseCall=()=>{
+      alertPromise().then((data)=>{
+          alert(`Congrats. 5 Tasks have been Successfully Completed`);
+      })
+      .catch((err)=>{
+          console.log('promise rejected');
+      })
+  }
+  
 
 
 
 
 
 
-
-// let checkboxes = document.querySelector(".status");
-// checkboxes.addEventListener("submit", (e) => {
-//   e.preventDefault();
-//   let stat = [];
-//   document.querySelectorAll("[type='checkbox']").forEach((item) => {
-//     if (item.checked === true) {
-//       stat.push(item.value);
-//     }
-//   });
-//   console.log(stat);
-// });
-// // let statSel=[]
-    // function checking()
-
-    // {
-    //     // statSel.length=0;
-    //     for(c of checkboxes){
-    //         // if(c.checked){
-    //         //     statSel.push(c.value)
-    //         // }
-    //         console.log(c.checked)
-    //     }
-    //     // if(statSel.length>=5){
-    //     //     console.log(statSel)
-    //     //     alert( `“ Congrats. 5 Tasks have been Successfully Completed ”` )
-    //     // }
-    // }
