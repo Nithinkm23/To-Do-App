@@ -6,7 +6,7 @@ var error3 = document.getElementById("err3");
 
 document.getElementById("login").onclick = function redirect() {
   if (eml.value == "admin" && passw.value == "12345") {
-    window.location.href = "http://127.0.0.1:5500/mainPage.html";
+    window.location.href = "mainPage.html";
     alert("Logging in");
   } else {
     alert("OOPS!! Try again");
